@@ -1,0 +1,58 @@
+[
+ {
+   "id": 1,
+   "name": "Bank Accounts"
+ },
+ {
+   "id": 2,
+   "name": "Company"
+ },
+ {
+   "id": 3,
+   "name": "Credit Cards"
+ },
+ {
+   "id": 4,
+   "name": "Email Accounts"
+ },
+ {
+   "id": 5,
+   "name": "Web Logins"
+ },
+ {
+   "id": 6,
+   "name": "Vehicle"
+ },
+ {
+   "id": 7,
+   "name": "Registration Codes"
+ },
+ {
+   "id": 8,
+   "name": "Home"
+ },
+ {
+	 "id": 9,
+	 "name": "Personal"
+ },
+ {
+	 "id": 10,
+	 "name": "People"
+ },
+ {
+	 "id": 11,
+	 "name": "Landlord"
+ },
+ {
+	 "id": 12,
+	 "name": "Note"
+ },
+ {
+	 "id": 13,
+	 "name": "Place"
+ },
+ {
+	 "id": 14,
+	 "name": "Phone"
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+   "id": 1,
+   "name": "Developer"
+ },
+ {
+   "id": 2,
+   "name": "Games"
+ },
+ {
+   "id": 3,
+   "name": "Money"
+ },
+ {
+   "id": 4,
+   "name": "Teacher"
+ },
+ {
+   "id": 5,
+   "name": "Personal"
+ },
+ {
+   "id": 6,
+   "name": "Houses"
+ }
+]

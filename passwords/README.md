@@ -1,0 +1,7 @@
+This is a password application which is free of charge
+
+Passwords can be exported as a text file resulting in full ownership
+
+Passwords are saved on the phone and nowhere elese
+
+Passwords can have validation or not
