@@ -161,7 +161,7 @@ class TransferRepositoryImp extends TransferRepository {
       TransfersNames.fromAccountId: transfer.fromAccountId,
       TransfersNames.categoryId: transfer.categoryId,
       TransfersNames.recurrenceId: transfer.recurrenceId,
-      TransfersNames.usedForCashFlow: transfer.usedForCashFlow,
+      TransfersNames.usedForCashFlow: transfer.usedForCashFlow == true ? 1 : 0,
       TransfersNames.processed: transfer.processed,
     };
   }

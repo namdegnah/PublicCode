@@ -27,6 +27,7 @@ class Password {
     this.passwordValidationId,
     this.groups,
     this.types,
+    this.isValidated,
   });
   late int id;
   late int groupId;
@@ -49,6 +50,7 @@ class Password {
   late String? expiryDate;
   late String? passcode;
   late int? passwordValidationId;
+  late bool? isValidated;
   late List<Type>? types;
   late List<Group>? groups;
   // could this simply hold the passwordvalidation ie strong, medium or weak
@@ -104,7 +106,7 @@ class Password {
         break;
       case 16:
         notes = pf.fieldvalue!;
-        break;        
+        break; 
     }
   }
 

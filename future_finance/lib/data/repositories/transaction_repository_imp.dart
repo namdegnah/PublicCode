@@ -186,7 +186,7 @@ class TransactionRepositoryImp extends TransactionRepository {
       TransactionNames.categoryId: transaction.categoryId,
       TransactionNames.recurrenceId: transaction.recurrenceId,
       TransactionNames.credit: transaction.credit,
-      TransactionNames.usedForCashFlow: transaction.usedForCashFlow,
+      TransactionNames.usedForCashFlow: transaction.usedForCashFlow == true ? 1 : 0,
       TransactionNames.processed: transaction.processed,
     };
   }

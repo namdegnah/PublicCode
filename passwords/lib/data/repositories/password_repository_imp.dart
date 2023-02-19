@@ -4,7 +4,6 @@ import '../datasources/data_sources.dart';
 import '../../core/errors/exceptions.dart';
 import '../../core/errors/failures.dart';
 import '../../domain/entities/password.dart';
-import '../../domain/entities/password_filter.dart';
 import '../../domain/entities/type.dart';
 import '../../domain/entities/group.dart';
 import '../../domain/repositories/repositories_all.dart';
@@ -120,6 +119,7 @@ class PasswordRepositoryImp extends PasswordRepository {
         expiryDate: item[PasswordNames.expiryDate],
         passcode: item[PasswordNames.passcode],
         passwordValidationId: item[PasswordNames.passwordValidationId],
+        isValidated: item[PasswordNames.isValidated] == 1 ? true : false,
         types: types,  
         groups: groups,  
       ),
@@ -158,6 +158,7 @@ class PasswordRepositoryImp extends PasswordRepository {
       PasswordNames.expiryDate: password.expiryDate ?? '',
       PasswordNames.passcode: password.passcode ?? '',
       PasswordNames.passwordValidationId: password.passwordValidationId ?? 0,
+      PasswordNames.isValidated: password.isValidated == null ? 1 : password.isValidated == true ? 1 : 0,
     };
   }   
 }

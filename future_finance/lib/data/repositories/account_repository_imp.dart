@@ -277,7 +277,7 @@ class AccountRepositoryImp extends AccountRepository {
       AccountNames.accountName: account.accountName,
       AccountNames.description: account.description,
       AccountNames.balance: account.balance,
-      AccountNames.usedForCashFlow: account.usedForCashFlow,
+      AccountNames.usedForCashFlow: account.usedForCashFlow == true ? 1 : 0,
       AccountSavingsNames.savingsRate: account.savingsRate,
       AccountSavingsNames.save_recurrenceId: account.rateRecurrenceId,
       AccountSavingsNames.chargeRate: account.chargeRate,

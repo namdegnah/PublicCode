@@ -118,7 +118,7 @@ class CategoryRepositoryImp extends CategoryRepository {
       CategoryNames.categoryName: category.categoryName,
       CategoryNames.description: category.description,
       CategoryNames.iconPath: category.iconPath,
-      CategoryNames.usedForCashFlow: category.usedForCashFlow,
+      CategoryNames.usedForCashFlow: category.usedForCashFlow == true ? 1 : 0,
     };
   }
 }
