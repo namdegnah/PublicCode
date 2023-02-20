@@ -5,3 +5,5 @@ Passwords can be exported as a text file resulting in full ownership
 Passwords are saved on the phone and nowhere elese
 
 Passwords can have validation or not
+
+Passwords can be searched 
