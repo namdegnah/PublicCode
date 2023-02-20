@@ -7,3 +7,5 @@ Passwords are saved on the phone and nowhere elese
 Passwords can have validation or not
 
 Passwords can be searched 
+
+Passwords copied to clipboard following a long press
