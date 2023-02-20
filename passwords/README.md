@@ -9,3 +9,7 @@ Passwords can have validation or not
 Passwords can be searched 
 
 Passwords copied to clipboard following a long press
+
+Passwords have a group and a type
+
+Each group can contain any number of passwords
