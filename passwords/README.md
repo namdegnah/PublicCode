@@ -13,3 +13,7 @@ Passwords copied to clipboard following a long press
 Passwords have a group and a type
 
 Each group can contain any number of passwords
+
+Each type contains a number of password fields such as a url or passcode
+
+
