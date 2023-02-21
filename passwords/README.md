@@ -21,3 +21,5 @@ New types can be created with your selection of the appropriate password fields
 All the type's fields can be validated
 
 Passwords can be weak, normal or strong for any type
+
+this is feature-delete-group branch
