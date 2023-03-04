@@ -6,6 +6,7 @@ import '../../widgets/password/password_insert_step.dart';
 import '../../../domain/entities/password.dart';
 import 'password_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../config/injection_container.dart';
 
 class PasswordList extends StatelessWidget {
   final List<Password> passwords;
@@ -15,9 +16,9 @@ class PasswordList extends StatelessWidget {
     var stepResult = await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) => BlocProvider<PasswordBloc>.value(
-          value: PasswordBloc(),
+          value: sl<PasswordBloc>(),
           child: PasswordInsertStep( // So this changes
-            password: Password(id: -1, description: '', groupId: -1, typeId: -1, password: '', notes: ''),
+            password: Password(id: -1, description: '', groupId: -1, typeId: -1, password: '', notes: '', isValidated: true),
           ),
         ),
       ),
@@ -26,7 +27,7 @@ class PasswordList extends StatelessWidget {
       var insertResult = await Navigator.of(context).push(
         MaterialPageRoute(
           builder: (_) => BlocProvider<PasswordBloc>.value(
-            value: PasswordBloc(),
+            value: sl<PasswordBloc>(),
             child: PasswordScreen( // So this changes
               password: stepResult as Password,
             ),
