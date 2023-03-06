@@ -56,3 +56,7 @@ Future<void> init() async{
   sl.registerLazySingleton<SetupRepository>(() => SetupRepositoryImp(dataSource: sl()));
   sl.registerLazySingleton<PasswordRepository>(() => PasswordRepositoryImp(dataSource: sl()));
 }
+Future<void> initTest() async {
+  final appNavigation = AppNavigation();
+  sl.registerLazySingleton(() => appNavigation);  
+}

@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../bloc/setup/setup_bloc.dart';
+import '../bloc/password/password_bloc.dart';
+import '../bloc/group/group_bloc.dart';
+import '../bloc/type/type_bloc.dart';
+import '../bloc/theme/theme_bloc.dart';
 
 class GroupNames {
   static const id = 'id';
@@ -60,59 +66,34 @@ class TypeFieldNames {
 }
 
 class ColourScheme {
-  static const TextStyle st = TextStyle(color: Colors.black, fontSize: 18);
-  static const TextStyle stb = TextStyle(
-      color: Colors.black,
-      fontSize: 18,
-      fontWeight: FontWeight.normal,
-      shadows: [
-        Shadow(color: Colors.black26, offset: Offset(1.0, 1.0), blurRadius: 1.0)
-      ]);
-  static const TextStyle stbl = TextStyle(
-      color: cltx,
-      fontSize: 17,
-      fontWeight: FontWeight.bold,
-      shadows: [
-        Shadow(
-            color: Color(0xFFE1F5FE), offset: Offset(2.0, 2.0), blurRadius: 1.0)
-      ]);
-  static const TextStyle stbr = TextStyle(
-      color: cltx,
-      fontSize: 17,
-      fontWeight: FontWeight.bold,
-      shadows: [
-        Shadow(color: Colors.red, offset: Offset(1.0, 1.0), blurRadius: 1.0)
-      ]);
-  static const TextStyle str = TextStyle(
-      color: cltx,
-      fontSize: 17,
-      fontWeight: FontWeight.normal,
-      shadows: [
-        Shadow(color: Colors.red, offset: Offset(1.0, 1.0), blurRadius: 1.0)
-      ]);
-  static const TextStyle stc = TextStyle(
-    color: cltx,
-    fontSize: 18,
-  );
-  static const TextStyle stsm = TextStyle(
-    color: Colors.black,
-    fontSize: 10,
-  );
+  static const TextStyle st = TextStyle(color: Colors.black, fontSize: 18);  
+  static const TextStyle stbl = TextStyle(color: cltx, fontSize: 17, fontWeight: FontWeight.bold, shadows: [Shadow(color: Color(0xFFE1F5FE), offset: Offset(2.0, 2.0), blurRadius: 1.0)]);
+  static const TextStyle stbr = TextStyle(color: cltx, fontSize: 17, fontWeight: FontWeight.bold, shadows: [Shadow(color: Colors.red, offset: Offset(1.0, 1.0), blurRadius: 1.0)]);
+  static const TextStyle str = TextStyle(color: cltx, fontSize: 17, fontWeight: FontWeight.normal, shadows: [Shadow(color: Colors.red, offset: Offset(1.0, 1.0), blurRadius: 1.0)]);
+  static const TextStyle stc = TextStyle(color: cltx, fontSize: 18,);
+  static const TextStyle stsm = TextStyle(color: Colors.black, fontSize: 10,);
   static const Color clbk = Color(0xFF546E7A);
   static const Color cltx = Color(0xFFFFA726);
   static const Color clgl = Color(0xFFFFCC80);
   static const Color clgr = Color(0xFFCFD8DC);
   static const Color clred = Color(0xFFB71C1C);
 }
-
+List<BlocProvider> appProviders(){
+  return [
+    BlocProvider<GroupBloc>(create: (context) => GroupBloc(),),
+    BlocProvider<TypeBloc>(create: (context) => TypeBloc(),),
+    BlocProvider<ThemeBloc>(create: (context) => ThemeBloc(),),
+    BlocProvider<SetupBloc>(create: (context) => SetupBloc(),), 
+    BlocProvider<PasswordBloc>(create: (context) => PasswordBloc()),   
+  ];
+}
 class AppConstants {
   static const databaseName = 'multiUserToDo';
   static const userId = 'userId';
   static const defaultUserId = 1;
   static const noType = -1010101;
   static const noFilterChosen = -1;
-  static const snackbar =
-      SnackBar(content: const Text('Password copied to Clipboard'));
+  static const snackbar = SnackBar(content: const Text('Password copied to Clipboard'));
 }
 
 enum Formatters {
