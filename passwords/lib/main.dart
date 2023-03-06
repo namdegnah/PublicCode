@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'presentation/config/injection_container.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'presentation/bloc/group/group_bloc.dart';
-import 'presentation/bloc/type/type_bloc.dart';
 import 'presentation/bloc/theme/theme_bloc.dart';
-import 'presentation/bloc/setup/setup_bloc.dart';
-import 'presentation/bloc/password/password_bloc.dart';
 import 'presentation/config/navigation/app_router.dart';
 import 'presentation/pages/start_up.dart';
 import 'presentation/config/navigation/app_navigation.dart';
@@ -22,13 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<GroupBloc>(create: (context) => GroupBloc(),),
-        BlocProvider<TypeBloc>(create: (context) => TypeBloc(),),
-        BlocProvider<ThemeBloc>(create: (context) => ThemeBloc(),),
-        BlocProvider<SetupBloc>(create: (context) => SetupBloc(),), 
-        BlocProvider<PasswordBloc>(create: (context) => PasswordBloc()),       
-      ], 
+      providers: appProviders(), 
       child: Builder(
         builder: (context){
           final userState = context.watch<ThemeBloc>().state;

@@ -24,6 +24,7 @@ class AppDrawer extends StatelessWidget {
               child: Text('Menu'),
             ),
             ListTile(
+              key: Key('HomeAppDrawer'),
               contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
               leading: const Icon(Icons.home),
               title: const Text('Home'),
@@ -36,6 +37,7 @@ class AppDrawer extends StatelessWidget {
               thickness: 1.0,
             ),
             ListTile(
+              key: Key('GroupsAppsDrawer'),
               leading: const Icon(Icons.group),
               title: const Text('Groups'),
               onTap: () async {
@@ -47,6 +49,7 @@ class AppDrawer extends StatelessWidget {
               thickness: 1.0,
             ),            
             ListTile(
+              key: Key('TypesAppsDrawer'),
               leading: const Icon(Icons.type_specimen),
               title: const Text('Types'),
               onTap: () async {
@@ -58,6 +61,7 @@ class AppDrawer extends StatelessWidget {
               thickness: 1.0,
             ),             
             ListTile(
+              key: Key('PasswordsAppsDrawer'),
               leading: const Icon(Icons.password),
               title: const Text('Passwords'),
               onTap: () async {
@@ -69,6 +73,7 @@ class AppDrawer extends StatelessWidget {
               thickness: 1.0,
             ),             
             ListTile(
+              key: Key('SearchAppsDrawer'),
               leading: const Icon(Icons.search),
               title: const Text('Search'),
               onTap: () async {

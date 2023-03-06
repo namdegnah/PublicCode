@@ -171,6 +171,7 @@ class Password {
     expiryDate = json['expiryDate'];
     passcode = json['passcode'];
     passwordValidationId = json['passwordValidationId'];
+    isValidated = json['isValidated'];
   }
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
@@ -195,6 +196,7 @@ class Password {
     data['"expiryDate"'] = '"$expiryDate"';
     data['"passcode"'] = '"$passcode"';
     data['"passwordValidationId"'] = passwordValidationId ?? 0;
+    data['"isValidated"'] = isValidated ?? 0;
     return data;
   }    
 }
