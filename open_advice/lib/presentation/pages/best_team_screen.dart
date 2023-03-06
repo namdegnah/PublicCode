@@ -31,7 +31,7 @@ class _BestTeamScreenState extends State<BestTeamScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           teamDisplay(widget.bestTeam),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           squadDisplay(widget.bestTeam, orientation, size, listDepth),
         ],
       ),
