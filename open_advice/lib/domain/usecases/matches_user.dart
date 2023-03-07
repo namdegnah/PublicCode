@@ -7,8 +7,6 @@ import 'extensions.dart';
 import '../entities/match.dart';
 import '../entities/team.dart';
 import '../repositories/repositories_all.dart';
-import '../../presentation/config/injection_container.dart';
-import '../usecases/best_team_user.dart';
 import '../entities/current_season.dart';
 import '../../core/util/date_time_extension.dart';
 import 'package:intl/intl.dart';
@@ -24,7 +22,7 @@ class MatchesUser extends UseCase<BestTeam, Params> {
   Future<Either<Failure, BestTeam>> call(Params params) async {
     try{
       CurrentSeason? currentSeason;
-      var listMatch;
+      late List<Match> listMatch;
       DateTime now = DateTime.now();
       
       var currentSeasonEither = await repository.getCurrentSeason();
@@ -72,15 +70,15 @@ class MatchesUser extends UseCase<BestTeam, Params> {
       int maxValues = winners.getCountOfMaxValue(max);
       bestTeam = winners.getValueOfMax(maxValues, max);
       bestTeamId = bestTeam.id;
-      var bt;
-      var bestTeamUser = sl<BestTeamUser>();
-      var bestTeamResult = await bestTeamUser.call(Params.id(id: bestTeamId));
+      late BestTeam bt;
+      var bestTeamResult = await repository.getBestTeam(bestTeamId);
       bestTeamResult.fold(
         (failure) {
           return Left(failure);
         },
         (bestTeam) => bt = bestTeam,      
       );
+      bt.originalId = bestTeamId;
       return Right(bt);
     } on Exception catch(error){
       return Left(UseCaseFailure(error.toString()));

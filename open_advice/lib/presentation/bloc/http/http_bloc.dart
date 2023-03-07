@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import '../../../domain/usecases/best_team_user.dart';
 import 'package:meta/meta.dart';
 import '../../../domain/entities/best_team.dart';
 import '../../../presentation/config/injection_container.dart';
@@ -12,7 +11,6 @@ part 'http_bloc_state.dart';
 
 class HttpBloc extends Bloc<HttpEvent, HttpState> {
   MatchesUser matchesUser = sl<MatchesUser>();
-  BestTeamUser bestTeamUser = sl<BestTeamUser>();
   
   HttpBloc() : super(HttpInitialState()) {  
     on<MatchesRequestData>((event, emit) => _getMatches(event, emit)); 

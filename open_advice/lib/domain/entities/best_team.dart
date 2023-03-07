@@ -19,6 +19,7 @@ class BestTeam {
     required this.squad,
     required this.staff,
     required this.lastUpdated,
+    this.originalId,
   });
   late final Area area;
   late final int id;
@@ -36,6 +37,7 @@ class BestTeam {
   late final List<Squad> squad;
   late final List<dynamic> staff;
   late final String lastUpdated;
+  late int? originalId;
   
   BestTeam.fromJson(Map<String, dynamic> json){
     area = Area.fromJson(json['area']);
