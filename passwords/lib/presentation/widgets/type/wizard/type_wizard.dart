@@ -46,6 +46,7 @@ class _TypeWizzardState extends State<TypeWizzard> {
         title: const Text('Type Wizzard'),
         actions: [
           IconButton(
+            key: const Key('typeWizzardSaveButton'),
             icon: stepNo == widget.fields.length - 1 ? const Icon(Icons.save) : const Icon(Icons.save, color: Colors.black12),
             onPressed: () => stepNo == widget.fields.length - 1 ? Navigator.pop(context, widget.type) : null,
             ),          

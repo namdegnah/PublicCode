@@ -6,7 +6,6 @@ import 'presentation/config/navigation/app_router.dart';
 import 'presentation/pages/home_screen.dart';
 import 'presentation/config/navigation/app_navigation.dart';
 import 'presentation/config/providers.dart';
-import 'domain/entities/setting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

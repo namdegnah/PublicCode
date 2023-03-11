@@ -14,8 +14,6 @@ Future<sql.Database> database() async {
       onCreate: (db, version) {
         List<String> sqls = CreateDataBase.getSQL();
         for (var sql in sqls) {
-          // ignore: avoid_print
-          print(sql);
           db.execute(sql);
         }
       },

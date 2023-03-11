@@ -22,6 +22,7 @@ class GroupScreen extends StatelessWidget {
         title: const Text('Group'),
         actions: <Widget>[
           IconButton(
+            key: ValueKey('groupSaveButton'),
             icon: const Icon(Icons.save),
             onPressed: () => _saveForm(context),
             ),

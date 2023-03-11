@@ -20,6 +20,7 @@ dev_dependencies:
     sdk: flutter
   integration_test_preview: ^0.1.1
   mocktail: ^0.3.0
+  bloc_test: ^9.1.1
   flutter_lints: ^2.0.0
 
 flutter:
@@ -28,7 +29,7 @@ flutter:
 
   assets:
   - assets/json/
-  #   - images/a_dot_ham.jpeg
+  - assets/images/
 
   # fonts:
   #   - family: Schyler

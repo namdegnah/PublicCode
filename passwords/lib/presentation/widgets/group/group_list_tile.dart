@@ -101,10 +101,12 @@ class _GroupListTileState extends State<GroupListTile> {
             child: Row(
               children: <Widget>[
                 IconButton(
+                  key: ValueKey('iconbuttonedit${widget.group.id}'),
                   icon: const Icon(Icons.edit),
                   onPressed: () => _navigateAndDisplayGroup(context, id),
                 ),
                 IconButton(
+                  key: ValueKey('iconbuttondelete${widget.group.id}'),
                   icon: const Icon(Icons.delete),
                   onPressed: () => _deleteGroup(context, id),
                 ),

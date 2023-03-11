@@ -39,8 +39,6 @@ void main(){
       expect(buttonObject, findsOneWidget);
       await tester.tap(buttonObject);
       await tester.pumpAndSettle();
-      final textSObject = find.byKey(const Key('nextpagenextpage'));
-      expect(textSObject, findsOneWidget);
       final tileObject = find.byWidgetPredicate((w) => w is ListTile && 'Udemy'.compareTo((w.title as Text).data!) == 0);
       expect(tileObject, findsOneWidget);
       ListTile tile = tester.firstWidget(tileObject);

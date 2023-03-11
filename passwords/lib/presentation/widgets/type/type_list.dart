@@ -60,6 +60,7 @@ class _TypeListState extends State<TypeList> {
             iconTheme: const IconThemeData(color: Colors.black26),
             actions: <Widget>[             
               IconButton(
+                key: const ValueKey('addTypeButton'),
                 icon: const Icon(Icons.add),
                 onPressed: () {
                   _navigateAndDisplayType(context);

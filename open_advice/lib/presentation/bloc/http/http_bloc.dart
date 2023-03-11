@@ -1,5 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/entities/best_team.dart';
 import '../../../presentation/config/injection_container.dart';
 import '../../../domain/usecases/matches_user.dart';
@@ -20,7 +19,7 @@ class HttpBloc extends Bloc<HttpEvent, HttpState> {
     emit(HttpLoadingState());
     final either = await matchesUser(Params());
     either.fold(
-      (failure) => HttpErrorState(message: failure.message),
+      (failure) => emit(HttpErrorState(message: failure.message)),
       (bestTeam) => emit(HttpMatchListState(bestTeam: bestTeam)),
     );
   }     

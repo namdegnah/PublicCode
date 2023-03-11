@@ -12,12 +12,17 @@ class TypeWidget extends StatefulWidget {
 
 class _TypeWidgetState extends State<TypeWidget> {
 
-  late TextEditingController _dueDateController = TextEditingController();
-  late DateTime dueDateUsed;
+  late TextEditingController controller;
 
   @override
+  void initState() {
+    controller = TextEditingController();
+    controller.text = widget.type.name;
+    super.initState();
+  }
+  @override
   void dispose() {
-    _dueDateController.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -34,9 +39,10 @@ class _TypeWidgetState extends State<TypeWidget> {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
+                key: const Key('typeNameTextFormField'),
                 maxLength: 40,
                 decoration: const InputDecoration(hintText: 'Enter the Type name', labelText: 'Type name'),                
-                initialValue: widget.type.name,
+                controller: controller,
                 textInputAction: TextInputAction.none,
                 validator: (value){
                   if(value!.isEmpty){

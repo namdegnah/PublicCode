@@ -14,6 +14,9 @@ import 'dart:convert' as conv show json;
   Future<void> loadFootballPage() async {
     await sl<AppNavigation>().pushNamed(NavigationPaths.footabll);
   }
+  Future<void> loadMortgagePage() async {
+    await sl<AppNavigation>().pushNamed(NavigationPaths.mortgage);
+  }  
   Future<List<Password>> getPasswordList() async {
 
     List<Password> passwords = [];
