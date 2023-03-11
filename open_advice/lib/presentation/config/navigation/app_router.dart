@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'navigation_paths.dart';
 import '../../pages/next_page.dart';
 import '../../pages/home_sink.dart';
+import '../../widgets/mortgage_calculator_widget.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
@@ -16,12 +17,12 @@ class AppRouter {
         );
       case NavigationPaths.footabll:
         return MaterialPageRoute(
-          builder: (_) => const HomeSink(key: Key('AppRouter'),),
+          builder: (_) => const HomeSink(key: Key('FootballScreen'),),
         );
-      // case NavigationPaths.groups:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const GroupsScreen(key: Key('GroupsRouter'),),          
-      //   );
+      case NavigationPaths.mortgage:
+        return MaterialPageRoute(
+          builder: (_) => const MortgageCalculatorWidget(key: Key('mortgageCalculatorScreen'),),          
+        );
       // case NavigationPaths.type:
       //   return MaterialPageRoute(
       //     builder: (_) => const TypesScreen(key: Key('TypesRouter'),),

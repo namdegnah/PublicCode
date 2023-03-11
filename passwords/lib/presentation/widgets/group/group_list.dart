@@ -45,6 +45,7 @@ class _GroupListState extends State<GroupList> {
             iconTheme: const IconThemeData(color: Colors.black26),
             actions: <Widget>[              
               IconButton(
+                key: const ValueKey('addGroupButton'),
                 icon: const Icon(Icons.add),
                 onPressed: () {
                   _navigateAndDisplayGroup(context);

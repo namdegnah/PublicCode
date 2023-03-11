@@ -12,6 +12,7 @@ class StandardButton{
     this.textColor,
     this.textStyle,
     this.cornerRadius,
+    this.key,
   });
     
   final Function()? onTap;
@@ -22,12 +23,14 @@ class StandardButton{
   Color? textColor;
   TextStyle? textStyle;
   double? cornerRadius;
+  String? key;
 
   Widget get button {
     return SizedBox(
       height: height ?? 40,
       width: width ?? 327,
       child: ElevatedButton(
+        key: Key(key ?? 'buttonkey'),
         onPressed: enabled ? onTap : null,
         style: ButtonStyle(
           // text colour

@@ -8,6 +8,7 @@ import '../../../domain/entities/type.dart';
 import '../../../data/models/data_set.dart';
 import '../../../domain/usecases/type_usecase.dart';
 import '../../../data/models/params.dart';
+import '../../../data/datasources/data_sources.dart';
 
 class TypeBloc extends Bloc<TypeEvent, TypeState> {
   TypeUser todoUser = sl<TypeUser>();
@@ -54,7 +55,10 @@ class TypeBloc extends Bloc<TypeEvent, TypeState> {
     final either = await typeUser.deleteType(Params.type(type: event.type));
     either.fold(
       (failure) => TypeErrorState(message: failure.message),
-      (list) => emit(TypeListState(types: list)),
+      (list) {
+        sl<DataSet>().types = list;
+        emit(TypeListState(types: list));
+      } 
     );
   }     
   void _updateType(UpdateTypeEvent event, Emitter<TypeState> emit) async {
@@ -62,7 +66,10 @@ class TypeBloc extends Bloc<TypeEvent, TypeState> {
     final either = await todoUser.updateType(Params.type(type: event.type));
     either.fold(
       (failure) => TypeErrorState(message: failure.message),
-      (list) => emit(TypeListState(types: list)),
+      (list) {
+        sl<DataSet>().types = list;
+        emit(TypeListState(types: list));
+      } 
     );
   }
   void _insertTypeField(InsertTypeFieldEvent event, Emitter<TypeState> emit) async {

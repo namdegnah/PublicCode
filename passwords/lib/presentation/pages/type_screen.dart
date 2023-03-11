@@ -22,6 +22,7 @@ class TypeScreen extends StatelessWidget {
         title: const Text('Type Item'),
         actions: <Widget>[
           IconButton(
+            key: const Key('typeSaveButton'),
             icon: const Icon(Icons.save),
             onPressed: () => _saveForm(context),
             ),

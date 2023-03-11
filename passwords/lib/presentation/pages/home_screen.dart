@@ -4,16 +4,9 @@ import 'animations/fast_animation.dart';
 import '../widgets/common_widgets.dart';
 import 'preferences_page.dart';
 import '../../domain/usecases/function_calls.dart';
-import '../../domain/usecases/convert/group_web_dev_convert.dart';
-import '../../domain/usecases/convert/group_dev_regcode_convert.dart';
-import '../../domain/usecases/convert/money_bank_account_convert.dart';
-import '../../domain/usecases/convert/money_web_login_convert.dart';
-import '../../domain/usecases/convert/personal_weblogin_convert.dart';
-import '../../domain/usecases/convert/teacher_weblogin_convert.dart';
-import '../../domain/usecases/convert/personal_people_convert.dart';
-import '../../domain/usecases/convert/games_weblogin_convert.dart';
-import '../../domain/usecases/convert/home_weblogin_convert.dart';
+import '../config/buttons/standard_button.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../config/style/text_style.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,41 +43,36 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.settings),
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PreferencePage(),)),
           ), 
-          IconButton(
-            icon: const Icon(Icons.import_contacts),
-            onPressed: () async => await restore(),
-          ),
-          IconButton(
-            icon: const Icon(Icons.backup),
-            // calls startup to get the latest data
-            onPressed: () async => await backup(context),
-          ), 
-          IconButton(
-            icon: const Icon(Icons.telegram),
-            onPressed: () async {
-              // await convertDevWebLogin();
-              // await convertDevRegCode();
-              // await convertMoneyBankAccount();
-              // await convertMoneyWebLogin();
-              // await convertPersonalWebLogin();
-              // await convertTeacherWebLogin();
-              // await convertPersonalPeople();
-              // await convertGamesWebLogin();
-              // await convertHomesWebLogin();
-              await checkStoragePermission();
-            } 
-          ),                                       
         ],
       ),
       drawer: AppDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          child: animation,
-          //child: const Text('abc'),
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: Text('hmmm'),
+            ),
+            getNextStepButton('groupsbutton', 'Groups', () => loadGroups),
+            const SizedBox(height: 5,),
+            getNextStepButton('typesbutton', 'Types', () => loadTypes),
+            const SizedBox(height: 5,),
+            getNextStepButton('passwordbutton', 'Passwords', () => loadPasswords),
+            const SizedBox(height: 5,),                        
+          ],
         ),
       ),
     );
   }
+  Widget getNextStepButton(String key, String title, Function onTap){
+    StandardButton sb = StandardButton(
+      onTap: onTap(), 
+      title: title, 
+      enabled: true,
+      textStyle: buttonText,
+      key: key,
+    );
+    return Center(child: sb.button);
+  }  
 }

@@ -40,24 +40,28 @@ class ButtonGroup{
       title: 'Add', 
       enabled: addEnabled ?? false,
       width: width,
+      key: 'typeWizardAddButton'
     );
     StandardButton remove = StandardButton(
       onTap: removeOnTapped, 
       title: 'Remove', 
       enabled: removeEnabled ?? false,
       width: width,
+      key: 'typeWizardRemoveButton'
     );    
     StandardButton next = StandardButton(
       onTap: nextOnTapped, 
       title: 'Next', 
       enabled: nextEnabled ?? false,
       width: width,
+      key: 'typeWizardNextButton'
     );
     StandardButton previous = StandardButton(
       onTap: previousOnTapped, 
       title: 'Previous', 
       enabled: previousEnabled ?? false,
       width: width,
+      key: 'typeWizzardPreviousButton'
     );    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
